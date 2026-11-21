@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import org.w3c.dom.Node;
+
 /*
   Binary Search Tree application with menu
  * Author: Ege Aksoy
@@ -7,17 +9,7 @@ import java.util.Scanner;
 public class BST_Menu {
 
    
-    private static class Node {
-        int value;
-        Node left;
-        Node right;
-
-        Node(int value) {
-            this.value = value;
-            this.left = null;
-            this.right = null;
-        }
-    }
+  private static final BST tree = new BST();
 
     
     private static Node root = null;
@@ -64,14 +56,24 @@ public class BST_Menu {
 
             switch (choice) {
                 case 1:
+                    tree.displayInorder();
                     
-                    System.out.println("Inorder operation will be added.");
+                    System.out.println("Inorder operation is completed");
                     break;
 
-                case 2:
-                    
-                    System.out.println("Insert operation will be added.");
+               case 2: {
+                System.out.print("Enter the value to insert: ");
+
+                 if (!input.hasNextInt()) {
+                System.out.println("Invalid input. Please enter an integer.");
+                input.nextLine();
                     break;
+                     }
+
+                     int value = input.nextInt();
+                        tree.insert(value);
+                         break;
+                        }   
 
                 case 3:
                     
