@@ -1,11 +1,12 @@
-import java.util.Scanner;
-
-import org.w3c.dom.Node;
-
 /*
   Binary Search Tree application with menu
  * Author: Ege Aksoy
  */
+
+import java.util.Scanner;
+import org.w3c.dom.Node;
+
+
 public class BST_Menu {
 
    
@@ -46,7 +47,7 @@ public class BST_Menu {
             int choice = input.nextInt();
 
             
-            if (choice < 1 || choice > 5) {
+            if (choice < 1 || choice > 7) {
                  System.out.println("Invalid input. Please enter a num between 1 and 5.");
                  input.nextLine();
                 continue;
@@ -94,13 +95,37 @@ public class BST_Menu {
                             break;
                         }
 
-                case 5:
+                case 5: {
+                    System.out.print("Enter the value to search: ");
+
+                    if (!input.hasNextInt()) {
+                        System.out.println("Invalid input. Please enter an integer.");
+                        input.nextLine();
+                        break;
+                    }
+
+                    int value = input.nextInt();
+
+                    if (tree.valueSearch(value)) {
+                        System.out.println(value + " exists in the tree.");
+                    } else {
+                        System.out.println(value + " was not found.");
+                    }
+
+                    break;
+                }
+                case 6: {
+                    System.out.println("Total nodes: " + tree.displayNodeNum());
+                    break;
+                }
+
+                case 7:
                     running = false;
                     System.out.println("Exiting...");
                     break;
 
                 default:
-                    System.out.println("Invalid choice. Please select between 1 and 5.");
+                    System.out.println("Invalid choice. Please select between 1 and 7.");
             }
         }
 

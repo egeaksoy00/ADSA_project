@@ -90,6 +90,35 @@ private Node search(Node node, int value) {
     return search(node.right, value);
 }
 
+// Return true if the value exists in the tree
+public boolean valueSearch(int value)
+{
+    if(search(root, value) != null)
+    {
+        return true;
+    }
+    else
+        return false;
+
+}
+/*
+  Return the total number of nodes
+ */
+public int displayNodeNum() {
+    return countNodes(root);
+}
+
+/*
+  Count the current node and both subtrees recursively
+ */
+private int countNodes(Node node) {
+    if (node == null) {
+        return 0;
+    }
+
+    return 1 + countNodes(node.left) + countNodes(node.right);
+}
+
 /*
  Find the smallest node
  */
