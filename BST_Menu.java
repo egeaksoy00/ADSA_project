@@ -24,7 +24,9 @@ public class BST_Menu {
         System.out.println("2. Insert a value");
         System.out.println("3. Delete a value");
         System.out.println("4. Display smallest and largest values");
-        System.out.println("5. Exit");
+        System.out.println("5. Search for a value");
+        System.out.println("6. Display total number of nodes");
+        System.out.println("7. Exit");
         System.out.print("Enter your choice: ");
     }
 
