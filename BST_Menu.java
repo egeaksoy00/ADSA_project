@@ -75,15 +75,24 @@ public class BST_Menu {
                          break;
                         }   
 
-                case 3:
-                    
-                    System.out.println("Delete operation will be added.");
-                    break;
+               case 3: {
+                System.out.print("Enter the value to delete: ");
 
-                case 4:
-                    
-                    System.out.println("Minimum/maximum operation will be added.");
-                    break;
+                        if (!input.hasNextInt()) {
+                          System.out.println("Invalid input. Please enter an integer.");
+                                input.nextLine();
+                                break;
+                            }
+
+                            int value = input.nextInt();
+                            tree.delete(value);
+                            break;
+                        }
+
+                case 4: {
+                            tree.displayMinMax();
+                            break;
+                        }
 
                 case 5:
                     running = false;
